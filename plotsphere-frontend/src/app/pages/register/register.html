@@ -1,0 +1,80 @@
+<div class="register-container">
+
+  <div class="register-card">
+
+    <h1>PlotSphere</h1>
+
+    <p class="subtitle">
+      Digital Land Records & Mutation System
+    </p>
+
+    <h2>Create Account</h2>
+
+    <form (ngSubmit)="register()">
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="name"
+          placeholder="Enter your full name"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="Enter your email"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Mobile Number</label>
+        <input
+          type="tel"
+          name="mobileNo"
+          [(ngModel)]="mobileNo"
+          placeholder="Enter your mobile number"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter your password"
+          required>
+      </div>
+
+      <div class="role-box">
+        <strong>Role:</strong> Citizen
+      </div>
+
+      <button type="submit">
+        Register
+      </button>
+
+      @if (message) {
+        <p class="success">{{ message }}</p>
+      }
+
+      @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+      }
+
+    </form>
+
+    <p class="login-link">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </p>
+
+  </div>
+
+</div>
