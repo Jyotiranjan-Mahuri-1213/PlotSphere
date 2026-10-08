@@ -1,0 +1,100 @@
+<div class="land-records">
+
+  <div class="page-header">
+    <div>
+      <h1>My Land Records</h1>
+      <p>View and manage your registered land properties.</p>
+    </div>
+
+```
+<div class="record-count">
+  <span>{{ lands.length }}</span>
+  <small>Total Records</small>
+</div>
+```
+
+  </div>
+
+@if (lands.length > 0) {
+
+```
+@for (land of lands; track land.id) {
+
+  <div class="land-card">
+
+    <div class="card-header">
+
+      <div>
+        <span class="label">Land Record</span>
+        <h2>{{ land.surveyNumber }}</h2>
+      </div>
+
+      <span class="status">
+        {{ land.status }}
+      </span>
+
+    </div>
+
+    <div class="land-details">
+
+      <div class="detail">
+        <span>📍 Location</span>
+        <strong>{{ land.location }}</strong>
+      </div>
+
+      <div class="detail">
+        <span>🏙 District</span>
+        <strong>{{ land.district }}</strong>
+      </div>
+
+      <div class="detail">
+        <span>🏢 Tehsil</span>
+        <strong>{{ land.tehsil }}</strong>
+      </div>
+
+      <div class="detail">
+        <span>🏘 Village</span>
+        <strong>{{ land.village }}</strong>
+      </div>
+
+      <div class="detail">
+        <span>📐 Area</span>
+        <strong>{{ land.area }} sq.ft</strong>
+      </div>
+
+      <div class="detail">
+        <span>🏠 Land Type</span>
+        <strong>{{ land.landType }}</strong>
+      </div>
+
+    </div>
+
+    <div class="card-footer">
+      <span>Record ID: #{{ land.id }}</span>
+      <span>Owner ID: #{{ land.ownerId }}</span>
+    </div>
+
+  </div>
+
+}
+```
+
+} @else {
+
+```
+<div class="empty-state">
+
+  <div class="empty-icon">📄</div>
+
+  <h2>No Land Records Found</h2>
+
+  <p>
+    You currently don't have any registered land records.
+  </p>
+
+</div>
+```
+
+}
+
+</div>
